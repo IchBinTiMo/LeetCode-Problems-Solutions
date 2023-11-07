@@ -16,7 +16,6 @@ impl Solution {
             }
             ans += 1;
         }
-
         ans 
     }
 }
