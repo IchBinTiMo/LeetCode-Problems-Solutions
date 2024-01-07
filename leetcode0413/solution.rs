@@ -34,3 +34,21 @@ impl Solution {
         ans
     }
 }
+
+// Solution 2
+impl Solution {
+    pub fn number_of_arithmetic_slices(nums: Vec<i32>) -> i32 {
+        let mut ans: i32 = 0;
+
+        let mut dp: Vec<i32> = vec![0; nums.len()];
+
+        for i in 2..nums.len() {
+            if nums[i] + nums[i - 2] == nums[i - 1] * 2 {
+                dp[i] = dp[i - 1] + 1;
+            }
+
+            ans += dp[i];
+        }
+        ans
+    }
+}
