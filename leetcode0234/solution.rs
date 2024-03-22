@@ -16,15 +16,18 @@
 // }
 impl Solution {
     pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
+        // create a vector of the values
         let mut nums: Vec<i32> = Vec::new();
 
         let mut current: Option<Box<ListNode>> = head.clone();
 
+        // push the values into the vector
         while let Some(node) = current {
             nums.push(node.val);
             current = node.next;
         }
 
+        // check if the vector is a palindrome
         for i in 0..nums.len() {
             if nums[i] != nums[nums.len() - 1 - i] {
                 return false;
