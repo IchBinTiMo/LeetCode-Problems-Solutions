@@ -41,3 +41,31 @@ impl Solution {
         ans
     }
 }
+
+// impl Solution {
+//     pub fn trap(height: Vec<i32>) -> i32 {
+//         /// Time O(N) | Space O(N)
+//         let n: usize = height.len();
+
+//         let mut max_left_height: Vec<i32> = vec![height[0]; n];
+//         let mut max_right_height: Vec<i32> = vec![height[n - 1]; n];
+
+//         // get max height from left and right
+//         for i in 1..n {
+//             max_left_height[i] = max_left_height[i - 1].max(height[i]);
+//         }
+
+//         for i in (0..(n - 1)).rev() {
+//             max_right_height[i] = max_right_height[i + 1].max(height[i]);
+//         }
+
+//         let mut res: i32 = 0;
+
+//         // get the amount of water
+//         for i in 1..(n - 1) {
+//             res += max_left_height[i].min(max_right_height[i]) - height[i];
+//         }
+
+//         res
+//     }
+// }
