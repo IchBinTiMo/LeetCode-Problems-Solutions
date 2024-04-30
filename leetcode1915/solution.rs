@@ -23,6 +23,7 @@ impl Solution {
 
             masks.entry(current_mask).and_modify(|mask| *mask += 1).or_insert(1);
 
+            // current mask ^ this prefix mask == 0
             res += masks[&current_mask] - 1;
         }
 
