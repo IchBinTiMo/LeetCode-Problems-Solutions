@@ -1,5 +1,6 @@
 impl Solution {
     pub fn matrix_score(mut grid: Vec<Vec<i32>>) -> i32 {
+        /// Time: O(m * n) | Space: O(1)
         let m: usize = grid.len();
         let n: usize = grid[0].len();
 
