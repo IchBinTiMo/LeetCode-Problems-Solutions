@@ -22,7 +22,7 @@ impl Solution {
     pub fn evaluate_tree(mut root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         /// DFS
         /// 
-        /// Time O(N) | Space O(H)
+        /// Time O(N) | Space O(N)
         let mut ops: Vec<i32> = Vec::new();
 
         Self::traversal(root, &mut ops);
