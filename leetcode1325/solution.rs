@@ -20,6 +20,9 @@ use std::rc::Rc;
 use std::cell::RefCell;
 impl Solution {
     pub fn remove_leaf_nodes(root: Option<Rc<RefCell<TreeNode>>>, target: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        /// DFS
+        /// 
+        /// Time: O(n) | Space: O(n)
         if let Some(node) = root {
             let mut nd = node.borrow_mut();
 
