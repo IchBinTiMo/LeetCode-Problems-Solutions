@@ -7,7 +7,8 @@ impl Solution {
         let mut res: Vec<String> = Vec::new();
         let mut path: Vec<String> = Vec::new();
 
-        // use a vec to  store used words to avoid iterating over the whole word_dict
+        // use a vec to  store used words
+        // to avoid iterating over the whole word_dict
         // to improve the performance
         let mut used_words: Vec<String> = Vec::new();
 
