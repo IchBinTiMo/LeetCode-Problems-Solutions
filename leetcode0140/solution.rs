@@ -18,6 +18,7 @@ impl Solution {
         
     }
 
+    // backtracking
     fn backtracking(res: &mut Vec<String>, path: &mut Vec<String>, current: usize, s: &String, used_words: &mut Vec<String>, word_dict: &Vec<String>) {
         if current == s.len() {
             let joined = path.join(" ");
