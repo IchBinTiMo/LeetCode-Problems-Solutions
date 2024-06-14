@@ -1,5 +1,7 @@
 impl Solution {
     pub fn min_increment_for_unique(nums: Vec<i32>) -> i32 {
+        /// Move all extra x to x + 1
+        /// 
         /// Time O(n + 200001) | Space O(200001)
         /// where n is the length of nums
         
