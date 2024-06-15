@@ -1,7 +1,7 @@
 use std::collections::BinaryHeap;
 
 impl Solution {
-    pub fn find_maximized_capital(mut k: i32, mut w: i32, profits: Vec<i32>, capital: Vec<i32>) -> i32 {
+    pub fn find_maximized_capital(mut k: i32, w: i32, profits: Vec<i32>, capital: Vec<i32>) -> i32 {
         /// Time: O(n log n + k log n) | Space: O(n + k)
         /// where n is the length of profits
         let n: usize = profits.len();
@@ -18,7 +18,7 @@ impl Solution {
 
         while k > 0 {
             // add all the tasks that can be done with the current amount of capital
-            while idx < n && tasks[idx].1 <= w {
+            while idx < n && tasks[idx].1 <= res {
                 heap.push(tasks[idx].0);
                 idx += 1;
             }
