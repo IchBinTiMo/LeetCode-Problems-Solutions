@@ -14,22 +14,22 @@ impl Solution {
         let mut current: i32 = 0; // customers satisfied in current grumpy minutes
 
         for right in 0..n {
+            if right - left >= minutes as usize {
+                // shrink the window if the current window is larger than the maximum minutes that technique can be used
+                if grumpy[left] == 1 {
+                    current -= customers[left];
+                }
+                left += 1;
+            }
+
             if grumpy[right] == 0 {
                 not_grumpy += customers[right];
             } else {
-                while right >= left + minutes as usize {
-                    // shrink the window if the current window is larger than the maximum minutes that technique can be used
-                    if grumpy[left] == 1 {
-                        current -= customers[left];
-                    }
-                    left += 1;
-                }
-                
                 current += customers[right];
-                is_grumpy = is_grumpy.max(current);
+                is_grumpy = is_grumpy.max(current); // update the maximum satisfied customers in grumpy minutes
             }
-
         }
+
         is_grumpy + not_grumpy
     }
 }
