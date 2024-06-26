@@ -13,6 +13,10 @@
 class Solution {
 public:
     TreeNode* balanceBST(TreeNode* root) {
+        /// in-order traversal
+        ///
+        /// Time: O(n) | Space: O(n)
+        /// where n is the number of nodes in the tree
         vector<TreeNode*> v;
 
         in_order(root, v);
