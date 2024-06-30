@@ -60,27 +60,7 @@ public:
 
             pq.pop();
         }
-
-        while (!pq_b.empty()) {
-            auto [type, from, to] = pq_b.top();
-
-            int pf = find(parent_b, from); 
-            int pt = find(parent_b, to);
-
-            if (pf == pt) {
-                to_remove.insert({type, from, to});
-            } else {
-                if (size_b[pf] < size_b[pt]) {
-                    parent_b[pf] = pt;
-                    size_b[pt] += size_b[pf];
-                } else {
-                    parent_b[pt] = pf;
-                    size_b[pf] += size_b[pt];
-                }
-            }
-            pq_b.pop();
-        }
-
+        
         int self_parent = 0;
 
         // to check if there is a vertex whose parent is -1
