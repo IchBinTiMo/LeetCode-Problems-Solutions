@@ -1,12 +1,42 @@
+/*
+Solution 1:
+
+Time: O(m * n) | Space: O(m * n)
+
+- m: Length of rowSum
+- n: Length of colSum
+*/
 class Solution {
 public:
     vector<vector<int>> restoreMatrix(vector<int>& rowSum, vector<int>& colSum) {
-        /*
-        Time: O(m + n log n) | Space: O(m * n)
+        int m = rowSum.size();
+        int n = colSum.size();
+        vector<vector<int>> res(m, vector<int> (n, 0));
 
-        - m: Length of rowSum
-        - n: Length of colSum
-        */
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                res[i][j] += min(rowSum[i], colSum[j]);
+                rowSum[i] -= res[i][j];
+                colSum[j] -= res[i][j];
+            }
+        }
+
+        return res;        
+    }
+};
+
+
+/*
+Solution 2: 
+
+Time: O(m + n log n) | Space: O(m * n)
+
+- m: Length of rowSum
+- n: Length of colSum
+*/
+class Solution {
+public:
+    vector<vector<int>> restoreMatrix(vector<int>& rowSum, vector<int>& colSum) {
         int m = rowSum.size();
         int n = colSum.size();
         vector<vector<int>> res(m, vector<int> (n, 0));
