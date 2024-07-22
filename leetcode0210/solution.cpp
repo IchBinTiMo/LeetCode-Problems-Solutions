@@ -3,7 +3,7 @@ Solution 1:
 
 BFS
 
-Time: O(V + E) | Space: O(V)
+Time: O(V + E) | Space: O(V + E)
 
 - V: numCourses
 - E: the number of prerequisites
