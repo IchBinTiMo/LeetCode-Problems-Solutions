@@ -9,6 +9,48 @@ Time: O(n log n) | Space: O(n)
 class Solution {
 public:
     vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
+        vector<pair<int, int>> pairs;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            int num = nums[i];
+            int tmp = 0;
+            int base = 1;
+            if (num) {
+                while (num) {
+                    tmp += (mapping[num % 10]) * base;
+                    base *= 10;
+                    num /= 10;
+                }
+            } else {
+                tmp = mapping[num];
+            }
+
+            pairs.push_back({tmp, i});
+        }
+
+        sort(pairs.begin(), pairs.end());
+
+        vector<int> res;
+
+        for (auto& [n, i]: pairs) {
+            res.push_back(nums[i]);
+        }
+
+        return res;
+    }
+};
+
+/*
+Solution 2:
+
+Time: O(n log n) | Space: O(n)
+
+- n: length of nums
+*/
+
+class Solution {
+public:
+    vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
         map<int, int> mapped;
         map<int, int> indices;
 
