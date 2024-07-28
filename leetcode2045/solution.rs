@@ -5,7 +5,7 @@ Solution 1:
 
 BFS
 
-Time: O(n) | Space: O(n)
+Time: O(V + E) | Space: O(V)
 
 The second minimum value must equals to (the smallest value + 1) or (the smallest value + 2).
 Therefore, the second time we visit node n, we can get the second minimum value.
@@ -75,7 +75,7 @@ Solution 2:
 
 BFS
 
-Time: O(n) | Space: O(n)
+Time: O(V + E) | Space: O(V + E)
 */
 
 impl Solution {
