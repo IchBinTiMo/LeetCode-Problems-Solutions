@@ -1,5 +1,36 @@
 /*
-Solution 1: Sliding window
+Solution 1: Greedy
+
+Time: O(n) | Space: O(1)
+
+Runtime: 207 ms, 97.64%
+Memory Usage: 107.70 MB, 76.89%
+
+- n: length of arrays
+*/
+
+class Solution {
+public:
+    int maxDistance(vector<vector<int>>& arrays) {
+        int n = arrays.size();
+        int res = INT_MIN;
+        int mini = INT_MAX / 2;
+        int maxi = INT_MIN / 2;
+
+        for (auto &arr: arrays) {
+            int newMax = arr.back();
+            int newMin = arr.front();
+
+            res = max(res, max(newMax - mini, maxi - newMin));
+            mini = min(mini, newMin);
+            maxi = max(maxi, newMax);
+        }
+        return res;
+    }
+};
+
+/*
+Solution 2: Sliding window
 
 Time: O(nlogn) | Space: O(n)
 
