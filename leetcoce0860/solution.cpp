@@ -3,8 +3,8 @@ Solution 1:
 
 Time: O(n) | Space: O(1)
 
-Runtime: 53 ms, faster than 97.85% of C++ online submissions for Lemonade Change.
-Memory Usage: 86.13 MB, less than 9.36% of C++ online submissions for Lemonade Change.
+Runtime: 53 ms, 97.85%
+Memory Usage: 86.13 MB, 9.36%
 
 - n: length of bills
 */
