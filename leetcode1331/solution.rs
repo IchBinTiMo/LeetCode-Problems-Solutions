@@ -29,16 +29,12 @@ impl Solution {
         indices[0].1 = 1;
 
         for i in 1..n {
-            indices[i].1 = if arr[indices[i].0] == arr[indices[i - 1].0] {
-                current
-            } else {
-                current += 1;
-                current
-            };
+            current += (arr[indices[i].0] != arr[indices[i - 1].0]) as i32;
+            indices[i].1 = current;
         }
 
         indices.sort_unstable_by_key(|idx| idx.0);
 
-        indices.into_iter().map(|(old, new)| new as i32).collect::<Vec<i32>>()
+        indices.into_iter().map(|(old, new)| new).collect::<Vec<i32>>()
     }
 }
