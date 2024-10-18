@@ -9,8 +9,6 @@ Memory: 3.88 MB | 21.74%
 - n: length of 'nums'
 */
 
-
-
 func countMaxOrSubsets(nums []int) int {
     mx := 0
     for _, num := range nums {
