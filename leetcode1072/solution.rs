@@ -3,8 +3,8 @@ Solution:
 
 Time: O(m * n) | Space: O(0)
 
-Runtime: 20 ms | 100.00%
-Memory: 2.93 MB | 100.00%
+Runtime: 3 ms | 100.00%
+Memory: 2.80 MB | 50.00%
 
 - m: length of 'matrix'
 - n: length of 'matrix[0]'
