@@ -1,3 +1,15 @@
+/*
+Solution: BFS
+
+Time: O(q * n ^ 2) | Space: O(n ^ 2)
+
+Runtime: 1 ms | 100.00%
+Memory: 2.22 MB | 50.00%
+
+- n: length of 'n'
+- q: length of 'queries'
+*/
+
 impl Solution {
     pub fn shortest_distance_after_queries(n: i32, queries: Vec<Vec<i32>>) -> Vec<i32> {
         let n: usize = n as usize;
