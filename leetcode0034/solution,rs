@@ -1,0 +1,66 @@
+/*
+Solution: Binary Search
+
+Time: O(log n) | Space: O(1)
+
+Runtime: 0 ms | 100.00%
+Memory: 2.56 MB | 7.34%
+
+- n: length of 'nums'
+*/
+
+impl Solution {
+    pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        let left: i32 = Self::binary_search_left(target, &nums);
+        let right: i32 = Self::binary_search_right(target, &nums);
+
+        vec![left, right]
+    }
+
+    fn binary_search_left(target: i32, nums: &Vec<i32>) -> i32 {
+        let mut left: usize = 0;
+        let mut right: usize = nums.len() - 1;
+
+        let mut res: i32 = -1;
+
+        while left <= right && right < nums.len() {
+            let mid: usize = (left + right) / 2;
+
+
+            if nums[mid] == target {
+                res = mid as i32;
+            }
+
+            if nums[mid] < target {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        res
+    }
+
+    fn binary_search_right(target: i32, nums: &Vec<i32>) -> i32 {
+        let mut left: usize = 0;
+        let mut right: usize = nums.len() - 1;
+
+        let mut res: i32 = -1;
+
+        while left <= right && right < nums.len() {
+            let mid: usize = (left + right) / 2;
+
+            if nums[mid] == target {
+                res = mid as i32;
+            }
+
+            if nums[mid] <= target {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        res
+    }
+}
