@@ -1,3 +1,14 @@
+/*
+Solution: Prefix Sum
+
+Time: O(n) | Space: O(n)
+
+Runtime: 0 ms | 100.00%
+Memory: 4.06 MB | 50.00%
+
+- n: length of 'nums'
+*/
+
 impl Solution {
     pub fn ways_to_split_array(nums: Vec<i32>) -> i32 {
         let n: usize = nums.len();
