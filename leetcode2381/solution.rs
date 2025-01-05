@@ -1,4 +1,50 @@
 /*
+Solution: Prefix Sum
+
+Time: O(n) | Space: O(n)
+
+Runtime: 0 ms | 100.00%
+Memory: 6.05 MB | 9.09%
+
+- n: length of 's'
+*/
+
+impl Solution {
+    pub fn shifting_letters(s: String, shifts: Vec<Vec<i32>>) -> String {
+        let n: usize = s.len();
+
+        let mut accs: Vec<i32> = vec![0; n + 1];
+
+        for sh in shifts.iter() {
+            let left: usize = sh[0] as usize;
+            let right: usize = (sh[1] + 1) as usize;
+            let dir: i32 = if sh[2] == 1 {1} else {-1};
+
+            accs[left] += dir;
+            accs[right] -= dir;
+        }
+
+        let s = s.as_bytes();
+
+        let mut res: String = String::new();
+
+        let mut acc: i32 = 0;
+
+        for i in 0..n {
+            acc += accs[i];
+
+            acc = ((acc % 26) + 26) % 26;
+
+            let c: u8 = (s[i] - b'a' + acc as u8) % 26 + b'a';
+
+            res.push(c as char);
+        }
+
+        res
+    }
+}
+
+/*
 Solution: Brute Force
 
 Time: O(m + n) | Space: O(m)
