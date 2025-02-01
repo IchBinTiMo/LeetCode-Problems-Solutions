@@ -1,3 +1,14 @@
+/*
+Solution: BFS
+
+Time: O(n * n) | Space: O(n * n)
+
+Runtime: 35 ms | 76.92%
+Memory: 10.74 MB | 15.38%
+
+- n: length of grid
+*/
+
 use std::collections::VecDeque;
 
 impl Solution {
