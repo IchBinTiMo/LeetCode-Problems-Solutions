@@ -1,3 +1,14 @@
+/*
+Solution: 
+
+Time: O(n) | Space: O(1)
+
+Runtime: 9 ms | 60.00%
+Memory: 2.16 MB | 100.00%
+
+
+*/
+
 impl Solution {
     pub fn punishment_number(n: i32) -> i32 {
         let mut res: i32 = 0;
