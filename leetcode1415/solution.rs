@@ -1,4 +1,46 @@
 /*
+Solution: DFS
+
+Time: O(3 ^ n) | Space: O(n)
+
+Runtime: 0 ms | 100%
+Memory: 2.33 MB | 37.50%
+*/
+
+impl Solution {
+    pub fn get_happy_string(n: i32, mut k: i32) -> String {
+        let mut res: String = String::new();
+
+        Self::dfs(&mut res,n, &mut k);
+
+        res
+    }
+    fn dfs(res: &mut String, n: i32, k: &mut i32) {
+        if n == 0 {
+            *k -= 1;
+            return;
+        } else {
+            for c in ['a', 'b', 'c'] {
+                if res.chars().last() == Some(c) {
+                    continue;
+                } else {
+                    res.push(c);
+
+                    Self::dfs(res, n - 1, k);
+
+                    if *k == 0 {
+                        return;
+                    }
+
+                    res.pop();
+
+                }
+            }
+        }
+    }
+}
+
+/*
 Solution: Backtracking
 
 Time: O(3 ^ n) | Space: O(n)
