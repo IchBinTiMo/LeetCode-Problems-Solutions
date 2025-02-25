@@ -5,6 +5,8 @@ Time: O(n) | Space: O(1)
 
 Runtime: 0 ms | 100.00%
 Memory: 3.20 MB | 60.00
+
+- n: length of 'arr'
 */
 
 impl Solution {
