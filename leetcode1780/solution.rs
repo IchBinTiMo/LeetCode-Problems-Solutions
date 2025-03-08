@@ -1,6 +1,27 @@
 /*
 Solution: 
 
+Time: O(1) | Space: O(1)
+
+Runtime: 0 ms | 100.00%
+Memory: 2.22 MB | 51.11%
+*/
+
+impl Solution {
+    pub fn check_powers_of_three(mut n: i32) -> bool {
+        while n != 0 {
+            if n % 3 == 2 {
+                return false;
+            }
+            n /= 3;
+        }
+        true
+    }
+}
+
+/*
+Solution: 
+
 Time: O(n) | Space: O(1)
 
 Runtime: 0 ms | 100.00%
